@@ -14,9 +14,13 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://airbnb-frontend-ucog.onrender.com",
-    credentials:true
-}))
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://airbnb-frontend-ucog.onrender.com" // 👈 deployed frontend URL
+  ],
+  credentials: true,
+}));
 
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
