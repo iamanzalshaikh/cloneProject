@@ -17,7 +17,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://airbnb-frontend-ucog.onrender.com" // 👈 deployed frontend URL
+    "https://airbnb-frontend-ucog.onrender.com" // 👈 deployed frontend URl
   ],
   credentials: true,
 }));
