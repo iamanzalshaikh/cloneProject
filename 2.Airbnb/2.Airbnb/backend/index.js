@@ -13,15 +13,17 @@ let port = process.env.PORT || 6000
 let app = express()
 app.use(express.json())
 app.use(cookieParser())
+
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://airbnb-frontend-ucog.onrender.com" // 👈 deployed frontend URl
+    "https://airbnb-frontend-ucog.onrender.com"
   ],
   credentials: true,
 }));
-app.options("*", cors());
+
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
 app.use("/api/listing",listingRouter )
